@@ -30,7 +30,7 @@ public class Main {
                 case 1:
                     System.out.println("Enter word to get the highest occurring character\n");
                     userWord = scan.nextLine();
-                    MaxCharacter.getHighestCharacter(userWord);
+                    StringHelper.getHighestCharacter(userWord);
                     break;
                 case 2:
                     System.out.println("Enter two words to check if they are anagrams of each other\n");
@@ -39,17 +39,17 @@ public class Main {
 
                     System.out.println("Enter second word\n");
                     String userWord2 = scan.nextLine();
-                    CheckAnagram.isAnagram(userWord, userWord2);
+                    StringHelper.isAnagram(userWord, userWord2);
                     break;
                 case 3:
                     System.out.println("Enter word to reverse\n");
                     userWord = scan.nextLine();
-                    ReverseWord.getReverseWord(userWord);
+                    StringHelper.getReverseWord(userWord);
                     break;
                 case 4:
                     System.out.println("Enter word to check if its a palindrome\n");
                     userWord = scan.nextLine();
-                    CheckPalindrome.IsPalindrome(userWord);
+                    StringHelper.IsPalindrome(userWord);
                     break;
                 case 5:
                     System.out.println("Exiting...");

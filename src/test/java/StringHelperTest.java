@@ -1,0 +1,2 @@
+public class StringHelperTest {
+}

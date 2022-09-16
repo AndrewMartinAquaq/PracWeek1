@@ -69,9 +69,17 @@ public class StringHelper {
     private static boolean compareWord(String userWord){
         userWord = userWord.toLowerCase();
         userWord = userWord.replaceAll("[^a-z0-9]", "");
-        String userWordRevered = reverseGivenWord(userWord);
+        double lengthDouble = Math.ceil(userWord.length() / 2);
+        int wordLength = (int)lengthDouble;
+        //String userWordRevered = reverseGivenWord(userWord);
+        for (int i = 0; i < wordLength; i++){
+            String wordEnd = userWord.substring(userWord.length() - i - 1, userWord.length() - i);
+            if(!userWord.substring(i, i + 1).equals(wordEnd)){
+                return false;
+            }
+        }
 
-        return userWord.equals(userWordRevered);
+        return true;
     }
 
     private static char maxChar(String userWord){

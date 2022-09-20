@@ -11,7 +11,7 @@ public class StringHelper {
     }
 
     public static void isAnagram(String userWord1, String userWord2){
-        if(compareWords(userWord1, userWord2)){
+        if(checkIfWordsAreAnagrams(userWord1, userWord2)){
             System.out.println(userWord1 + " and " + userWord2 + " are Anagrams\n");
         }
         else{
@@ -20,7 +20,7 @@ public class StringHelper {
     }
 
     public static void IsPalindrome(String userWord){
-        if(compareWord(userWord)){
+        if(checkIfWordIsPalindrome(userWord)){
             System.out.println(userWord + " is a Palindrome\n");
         }
         else{
@@ -28,7 +28,7 @@ public class StringHelper {
         }
     }
 
-    private static boolean compareWords(String userWord1, String userWord2){
+    private static boolean checkIfWordsAreAnagrams(String userWord1, String userWord2){
         userWord1 = userWord1.toLowerCase();
         userWord1 = userWord1.replaceAll("[^a-z0-9]", "");
         userWord2 = userWord2.toLowerCase();
@@ -47,8 +47,8 @@ public class StringHelper {
             char currentChar = userWord1.charAt(i);
 
             for (int j = 0; j < userWord1.length(); j++){
-                counter1 = countChar(userWord1, counter1, currentChar, j);
-                counter2 = countChar(userWord2, counter2, currentChar, j);
+                counter1 = iterateCounterIfCharsMatch(userWord1, counter1, currentChar, j);
+                counter2 = iterateCounterIfCharsMatch(userWord2, counter2, currentChar, j);
             }
             if(counter1 != counter2) return false;
 
@@ -59,19 +59,18 @@ public class StringHelper {
         return true;
     }
 
-    private static int countChar(String userWord, int counter, char currentChar, int i) {
+    private static int iterateCounterIfCharsMatch(String userWord, int counter, char currentChar, int i) {
         if(currentChar == userWord.charAt(i)){
             counter++;
         }
         return counter;
     }
 
-    private static boolean compareWord(String userWord){
+    private static boolean checkIfWordIsPalindrome(String userWord){
         userWord = userWord.toLowerCase();
         userWord = userWord.replaceAll("[^a-z0-9]", "");
         double lengthDouble = Math.ceil(userWord.length() / 2);
         int wordLength = (int)lengthDouble;
-        //String userWordRevered = reverseGivenWord(userWord);
         for (int i = 0; i < wordLength; i++){
             String wordEnd = userWord.substring(userWord.length() - i - 1, userWord.length() - i);
             if(!userWord.substring(i, i + 1).equals(wordEnd)){
@@ -95,7 +94,7 @@ public class StringHelper {
         for (int i = 0; i < userWord.length(); i++){
             char currentChar = userWord.charAt(i);
 
-            counter = countChars(userWord, counter, currentChar);
+            counter = countMatchingChars(userWord, counter, currentChar);
             if(counter > highestValue){
                 highestValue = counter;
                 highestChar = currentChar;
@@ -106,9 +105,9 @@ public class StringHelper {
         return highestChar;
     }
 
-    private static int countChars(String userWord, int counter, char currentChar) {
+    private static int countMatchingChars(String userWord, int counter, char currentChar) {
         for (int j = 0; j < userWord.length(); j++){
-            counter = countChar(userWord, counter, currentChar, j);
+            counter = iterateCounterIfCharsMatch(userWord, counter, currentChar, j);
         }
         return counter;
     }

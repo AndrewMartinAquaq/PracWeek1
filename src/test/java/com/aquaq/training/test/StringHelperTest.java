@@ -3,7 +3,6 @@ package com.aquaq.training.test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -13,9 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StringHelperTest {
 
-    @Mock
     String userString1;
-    @Mock
+
     String userString2;
 
     private final PrintStream standardOut = System.out;

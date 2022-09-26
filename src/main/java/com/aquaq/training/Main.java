@@ -3,7 +3,15 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+
+       public static StringHelper stringHelper;
+
+       public static void main(String[] args) {
+
+        if(stringHelper == null){
+            stringHelper = new StringHelper();
+        }
+
         Scanner scan = new Scanner(System.in);
         boolean loop = true;
         String userWord = "";
@@ -30,7 +38,7 @@ public class Main {
                 case 1:
                     System.out.println("Enter word to get the highest occurring character\n");
                     userWord = scan.nextLine();
-                    StringHelper.getHighestCharacter(userWord);
+                    System.out.println(stringHelper.getHighestCharacter(userWord));
                     break;
                 case 2:
                     System.out.println("Enter two words to check if they are anagrams of each other\n");
@@ -39,17 +47,17 @@ public class Main {
 
                     System.out.println("Enter second word\n");
                     String userWord2 = scan.nextLine();
-                    StringHelper.isAnagram(userWord, userWord2);
+                    System.out.println(stringHelper.isAnagram(userWord, userWord2));
                     break;
                 case 3:
                     System.out.println("Enter word to reverse\n");
                     userWord = scan.nextLine();
-                    StringHelper.getReverseWord(userWord);
+                    System.out.println(stringHelper.getReverseWord(userWord));
                     break;
                 case 4:
                     System.out.println("Enter word to check if its a palindrome\n");
                     userWord = scan.nextLine();
-                    StringHelper.IsPalindrome(userWord);
+                    System.out.println(stringHelper.IsPalindrome(userWord));
                     break;
                 case 5:
                     System.out.println("Exiting...");

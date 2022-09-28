@@ -13,6 +13,7 @@ public class StringHelper {
     public String isAnagram(String userWord1, String userWord2){
         if(checkIfWordsAreAnagrams(userWord1, userWord2)){
             return userWord1 + " and " + userWord2 + " are Anagrams\n";
+
         }
         else{
             return userWord1 + " and " + userWord2 + " are not Anagrams\n";
@@ -22,6 +23,7 @@ public class StringHelper {
     public String  IsPalindrome(String userWord){
         if(checkIfWordIsPalindrome(userWord)){
             return userWord + " is a Palindrome\n";
+
         }
         else{
             return userWord + " is not a Palindrome\n";

@@ -2,29 +2,31 @@ package com.aquaq.training;
 
 public class StringHelper {
 
-    public static void getReverseWord(String userWord) {
-        System.out.println(userWord + " reversed is " + reverseGivenWord(userWord) + "\n");
+    public String getReverseWord(String userWord) {
+        return userWord + " reversed is " + reverseGivenWord(userWord) + "\n";
     }
 
-    public static void getHighestCharacter(String userWord){
-        System.out.println("The highest occurring character in " + userWord + " is " + maxChar(userWord) + "\n");
+    public String getHighestCharacter(String userWord){
+        return "The highest occurring character in " + userWord + " is " + maxChar(userWord) + "\n";
     }
 
-    public static void isAnagram(String userWord1, String userWord2){
+    public String isAnagram(String userWord1, String userWord2){
         if(checkIfWordsAreAnagrams(userWord1, userWord2)){
-            System.out.println(userWord1 + " and " + userWord2 + " are Anagrams\n");
+            return userWord1 + " and " + userWord2 + " are Anagrams\n";
+
         }
         else{
-            System.out.println(userWord1 + " and " + userWord2 + " are not Anagrams\n");
+            return userWord1 + " and " + userWord2 + " are not Anagrams\n";
         }
     }
 
-    public static void IsPalindrome(String userWord){
+    public String  IsPalindrome(String userWord){
         if(checkIfWordIsPalindrome(userWord)){
-            System.out.println(userWord + " is a Palindrome\n");
+            return userWord + " is a Palindrome\n";
+
         }
         else{
-            System.out.println(userWord + " is not a Palindrome\n");
+            return userWord + " is not a Palindrome\n";
         }
     }
 
